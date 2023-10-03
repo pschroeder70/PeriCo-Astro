@@ -1,17 +1,23 @@
 ---
 
-import Logo from '../img/perico-transparent.png';
+import logo from '../img/perico-transparent.png';
 
 ---
 
 
 <div class="logo">
-    <img src={ Logo } alt="PERICO We Do Things" class="logo-img">
+    <img src={ logo } alt="PERICO We Do Things" class="logo-img">
 </div>
 
 
 <style>
-    .logo-img {
+    .logo {
+        display: flex;
+        align-items: center;
         width: 250px;
+        height: 75px;
+    }
+    .logo-img {
+        max-width: 250px;
     }
 </style>

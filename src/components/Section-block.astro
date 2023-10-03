@@ -1,0 +1,38 @@
+---
+export interface Props {
+	sectionNum: string;
+    sectionName: string;
+}
+
+const { sectionNum } = Astro.props as Props;
+const { sectionName } = Astro.props as Props;
+---
+
+<div class='section-block' id={sectionNum}>
+    <div class='section-block__content'>
+        <h2>{sectionName}</h2>
+        <p>Bacon ipsum dolor amet drumstick rump pork belly tongue pork loin. Alcatra ground round hamburger bresaola, andouille ball tip ham hock pork beef ribs short ribs venison swine.</p>
+        <p>Bacon ipsum dolor amet drumstick rump pork belly tongue pork loin. Alcatra ground round hamburger bresaola, andouille ball tip ham hock pork beef ribs short ribs venison swine.</p>
+        <p>Bacon ipsum dolor amet drumstick rump pork belly tongue pork loin. Alcatra ground round hamburger bresaola, andouille ball tip ham hock pork beef ribs short ribs venison swine.</p><p>Bacon ipsum dolor amet drumstick rump pork belly tongue pork loin. Alcatra ground round hamburger bresaola, andouille ball tip ham hock pork beef ribs short ribs venison swine.</p>
+        <p>Bacon ipsum dolor amet drumstick rump pork belly tongue pork loin. Alcatra ground round hamburger bresaola, andouille ball tip ham hock pork beef ribs short ribs venison swine.</p>
+        <p>Bacon ipsum dolor amet drumstick rump pork belly tongue pork loin. Alcatra ground round hamburger bresaola, andouille ball tip ham hock pork beef ribs short ribs venison swine.</p>
+    </div>
+</div>
+
+<style>
+    .section-block {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding-top: 100px;
+        scroll-snap-type: x proximity;
+    }
+
+    .section-block__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: var(--max-content-width);
+        width: 100%;
+    }
+</style>

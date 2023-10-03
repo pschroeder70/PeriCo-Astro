@@ -1,17 +1,31 @@
 ---
+
 import Layout from "../layout/Layout.astro";
 
-import Logo from "../components/Logo.astro";
+import Header from "../components/Header.astro"
+
+import Hero from "../components/Hero.astro";
+
+import SectionBlock from "../components/Section-block.astro";
+
 ---
 
 <Layout title="Peri Co">
-  <main id="content">
-    <div class="header">
-      <Logo />
-    </div>
-    <div class="content">
-      <h1>PERI Co.</h1>
-      <h2>We do things.</h2>
-    </div>
+  <main>
+    <Header />
+    <Hero />
+    <SectionBlock sectionNum="section-one" sectionName="Section I / about" />
+    <SectionBlock sectionNum="section-two" sectionName="Section II / Stuff" />
+    <SectionBlock  sectionNum="section-three" sectionName="Section III / things" />
+    <SectionBlock sectionNum="section-four" sectionName="Section IV / mission" />
   </main>
 </Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+</style>

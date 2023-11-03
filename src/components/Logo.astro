@@ -1,22 +1,52 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../img/perico-transparent.png';
+import { Image } from "astro:assets";
+import logo from "../img/perico-transparent.png";
 ---
 
-
 <div class="logo">
-    <Image src={ logo } width={250} alt="PERICO We Do Things" class="logo-img" />
+  <Image src={logo} width={250} alt="PERICO We Do Things" class="logo__img" />
 </div>
 
+<script>
+    const logo = document.querySelector('.logo') as HTMLElement;
+    const logoImg = document.querySelector('.logo__img') as HTMLImageElement;
+    let isScaled = false; // Track if the logo is currently scaled
+
+    window.addEventListener('scroll', () => {
+        // const scaleFactor = 0.65; // Scale to 65%
+        const desiredWidth = 165; // Set the desired width in pixels
+        const scaleHeight = 65;
+        const scrollY = window.scrollY;
+
+        if (scrollY >= 100 && !isScaled) {
+            logo.style.transition = 'all .5s ease-in-out';
+            logo.style.height = `${scaleHeight}px`;
+            logoImg.style.transition = 'all .3s ease-in-out';
+            logoImg.style.width = `${desiredWidth}px`;;
+            logoImg.style.height = `${(desiredWidth / 250) * 75}px`;
+            logoImg.style.transformOrigin = 'top left'; // Set the origin to the left
+            isScaled = true;
+        } else if (scrollY < 100 && isScaled) {
+            // Reset to the original state when scrolling back up
+            logo.style.transition = 'all .5s ease-in-out';
+            logo.style.height = `75px`;
+            logoImg.style.transition = 'all .3s ease-in-out';
+            logoImg.style.width = '250px';
+            logoImg.style.height = '65px';
+            logoImg.style.transformOrigin = 'left top'; // Reset the origin to the center
+            isScaled = false;
+        }
+    });
+</script>
 
 <style>
-    .logo {
-        display: flex;
-        align-items: center;
-        width: 250px;
-        height: 75px;
-    }
-    .logo-img {
-        max-width: 250px;
-    }
+  .logo {
+    display: flex;
+    align-items: center;
+    height: auto;
+  }
+  .logo__img {
+    height: 65px;
+  }
+
 </style>

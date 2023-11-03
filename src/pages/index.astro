@@ -1,9 +1,12 @@
 ---
 import { Image } from 'astro:assets';
+
 import Layout from "../layout/layout.astro";
 import Header from "../components/Header.astro"
 import Hero from "../components/Hero.astro";
+import Nav from "../components/Nav.astro";
 import SectionBlock from "../components/Section-block.astro";
+import CustCard from "../components/CustomerCard.astro";
 import Footer from "../components/Footer.astro";
 
 ---
@@ -12,10 +15,16 @@ import Footer from "../components/Footer.astro";
   <main>
     <Header />
     <Hero />
-    <SectionBlock sectionNum="section-one" sectionName="Section I / about" />
-    <SectionBlock sectionNum="section-two" sectionName="Section II / Stuff" />
-    <SectionBlock  sectionNum="section-three" sectionName="Section III / things" />
-    <SectionBlock sectionNum="section-four" sectionName="Section IV / mission" />
+    <Nav />
+    <SectionBlock sectionNum="section-four" sectionName="Our Mission" sectionCopy="At PeriCo, our mission is to be the go-to solution for getting things done. We're dedicated to delivering excellence in every project we undertake. With a passion for innovation and a commitment to excellence, we aim to provide top-notch services that meet and exceed our clients' expectations. 'When things need doing, we do them!' is not just our tagline; it's the ethos that drives us to make a difference in the world, one project at a time." />
+    <SectionBlock  sectionNum="section-three" sectionName="Things We Do" sectionCopy="At PeriCo, we're all about getting 'things' done – whether those 'things' are tasks, projects, or aspirations. Our mission is simple: when it comes to 'things,' we've got you covered. From tackling 'things to do' on your list to turning your 'things to be' into reality, PeriCo is your go-to partner. We're here to make the 'things' in life easier, more achievable, and simply better. When it comes to 'things,' trust PeriCo to get the job done!" />
+    <SectionBlock sectionNum="section-two" sectionName="Stuff We Did">
+        <CustCard custPic custName="Mike T." custLocation="Salem, MA" custCopy="I asked PeriCo to help me with my never-ending to-do list. Now, I have so much free time that I've taken up extreme knitting. Who knew 'things to do' could be this fun?" />
+        <CustCard custPic custName="Lucy P." custLocation="Hollywood, CA" custCopy="Thanks to PeriCo, my backyard was transformed into a tropical paradise. They even installed a waterfall that randomly serenades me with '80s ballads. Best decision ever!" />
+        <CustCard custPic custName="Frank S." custLocation="Eiri, IN" custCopy= "PeriCo helped me turn my 'things to be' into a reality by building a personal rocket ship. I'm now training for my next mission to Mars. Thanks, Elon who?"/>
+        <CustCard custPic custName="Evelyn R." custLocation="Laconia, NH" custCopy="I hired PeriCo to organize my extensive 4k movie collection. Now, they're alphabetized, color-coded, and classified by genres. I should've done this years ago!" />
+    </SectionBlock>
+    <SectionBlock sectionNum="section-one" sectionName="About" sectionCopy="This is a dummy company, build with Astro!" />
     <Footer />
   </main>
 </Layout>

@@ -1,27 +1,31 @@
-<div class='navigation'>
-    <ul class='navigation__list'>
-        <li class='navigation__list-item'><a href="#section-one">about</a></li>
-        <li class='navigation__list-item'><a href="#section-two">stuff</a></li>
-        <li class='navigation__list-item'><a href="#section-three">things</a></li>
-        <li class='navigation__list-item'><a href="#section-four">mission</a></li>
-    </ul>
+<div class="navigation">
+    <div class="navigation__item"><a href="#section-four">Our Mission</a></div>
+    <div class="navigation__item"><a href="#section-three">Things We Do</a></div>
+    <div class="navigation__item"><a href="#section-two">Stuff We Did</a></div>
+    <div class="navigation__item"><a href="#section-one">About Us</a></div>
 </div>
 
 <style>
-    .navigation {
+  .navigation {
+    position: sticky;
+    top: 65px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--max-content-width);
+    border-bottom: 2px solid grey;
+  }
+
+  .navigation__item {
+    background: grey;
     width: 100%;
+    text-align: center;
+    margin: 0 15px 0;
+    &:first-child {
+        margin-left: 0;
     }
-    .navigation__list {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
+    &:last-child {
+        margin-right: 0;
     }
-    .navigation__list-item {
-        margin-left: 15px;
-    }
+  }
 </style>

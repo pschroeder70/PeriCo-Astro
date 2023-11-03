@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import {custOne} from '../img/cust1m.jpg';
+
+export interface Props {
+    custPic: string;
+	custName: string;
+    custLocation: string;
+    custCopy: string;
+}
+
+const { custPic, custName, custLocation, custCopy } = Astro.props as Props;
+---
+
+<div class="customer">
+
+    <div class="customer__image"><img src={custOne} width={150} alt={custName} /></div>
+    {custCopy && <div class="customer__copy"><p>{custCopy}</p></div>}
+    <div class="customer__info">
+        {custName}, {custLocation}
+    </div>
+</div>
